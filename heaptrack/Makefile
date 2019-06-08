@@ -1,11 +1,8 @@
 #
-# Copyright (C) 2010-2012 OpenWrt.org
+# Copyright (C) 2019 OpenWrt.org
 #
-# This Makefile and the code shipped in src/ is free software, licensed
-# under the GNU Lesser General Public License, version 2.1 and later.
-# See src/COPYING for more information.
-#
-# Refer to src/COPYRIGHT for copyright statements on the source files.
+# This is free software, licensed under the GNU General Public License v2.
+# See /LICENSE for more information.
 #
 
 include $(TOPDIR)/rules.mk
