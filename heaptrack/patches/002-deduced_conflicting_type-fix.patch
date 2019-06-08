@@ -1,0 +1,11 @@
+--- a/tests/auto/tst_io.cpp
++++ b/tests/auto/tst_io.cpp
+@@ -124,7 +124,7 @@ TEST_CASE ("read line 64bit", "[read]")
+     REQUIRE(reader >> module);
+     REQUIRE(module == "/tmp/KDevelop-5.2.1-x86_64/usr/lib/libKF5Completion.so.5");
+ 
+-    for (uint64_t expected : {0x7f48beedc00ul, 0x0ul, 0x36854ul, 0x236858ul, 0x2700ul}) {
++    for (uint64_t expected : {0x7f48beedc00ull, 0x0ull, 0x36854ull, 0x236858ull, 0x2700ull}) {
+         uint64_t addr = 0;
+         REQUIRE(reader >> addr);
+         REQUIRE(addr == expected);
