@@ -27,7 +27,7 @@ define Package/heaptrack
   TITLE:=Heaptrack
   URL:=https://github.com/KDE/heaptrack
   DEPENDS:=+libunwind +boost-system +boost-filesystem +boost-iostreams \
-	  +boost-program_options +zlib +zstd
+	  +boost-program_options +boost-regex +zlib +zstd
 endef
 
 define Package/heaptrack/description
@@ -36,5 +36,12 @@ define Package/heaptrack/description
 endef
 
 CMAKE_OPTIONS:=-DHEAPTRACK_BUILD_GUI=OFF
+
+define Package/heaptrack/install
+	$(INSTALL_DIR) $(1)/usr/bin $(1)/usr/lib
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/heaptrack $(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/heaptrack_print $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/heaptrack $(1)/usr/lib/
+endef
 
 $(eval $(call BuildPackage,heaptrack))
